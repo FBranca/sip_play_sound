@@ -7,9 +7,9 @@ All parameters are passed using the command line.
 A found very few similar programs, and none were written using the PJSUA2 C++ API (which is still in alpha version at this time, mostly because of high level language bindings ?).
 
 It features :
-- testing if the sound is found before trying to make a call. Exit if the wave file is not found.
-- account registration timeout.
-- call ringing timeout.
+- Check if the sound is found before trying to make a call, exit if the file is not found.
+- Account registration timeout, exit on timeout
+- Call ringing timeout, exit on timeout
 
 The binary is staticaly linked, so it can easily used anywhere.
 
@@ -23,6 +23,7 @@ I've not tested with anterior versions of PJSIP.
 Since the PJSUA2 API is still instable it may not compile with other versions.
 
 # Usage
+```
 Usage: ./sps [OPTIONS] [dest-uri]
 
 Positionals:
@@ -39,3 +40,4 @@ Options:
   --auth-user TEXT            SIP account auth username
   --auth-passwd TEXT          SIP account auth password
   --wav-file TEXT             WAV file to play on call establishment
+```
