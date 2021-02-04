@@ -11,6 +11,7 @@ SpsCall::SpsCall (SpsAccount &account, SpsAudioMediaPlayer::unique_ptr &audiopla
     m_wavplay_ptr (std::move(audioplayer_ptr)),
     m_player_eof (false)
 {
+    m_wavplay_ptr->setCallback(this);
 }
 
 SpsCall::~SpsCall ()

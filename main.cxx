@@ -59,7 +59,7 @@ int main(int argc, char **argv)
         // If an error occurs, we won't register nor make the call
         std::unique_ptr<SpsAudioMediaPlayer>    wavplay_ptr(new SpsAudioMediaPlayer());
         try {
-            wavplay_ptr->createPlayer(config.getAudioFile(), 0);
+            wavplay_ptr->createPlayer(config.getAudioFile(), PJMEDIA_FILE_NO_LOOP);
         } catch (...) {
             std::cout << "Failed opening wav file " <<  config.getAudioFile() << std::endl;
             wavplay_ptr.release();
